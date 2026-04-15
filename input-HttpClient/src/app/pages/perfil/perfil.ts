@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { Http } from '../../services/http';
 
 @Component({
   selector: 'app-perfil',
@@ -6,4 +7,15 @@ import { Component } from '@angular/core';
   templateUrl: './perfil.html',
   styleUrl: './perfil.css',
 })
-export class Perfil {}
+export class Perfil implements OnInit {
+  gitHubService = inject(Http)
+
+  ngOnInit(){
+    this.gitHubService.getGithubUser();
+    
+  }
+
+  showUser(){
+    console.log(this.gitHubService.getGithubUser())
+  }
+}

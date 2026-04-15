@@ -8,5 +8,7 @@
         "parser": "angular"
       }
     }
-  ]
+  ],
+  "useTabs": false,
+  "tabWidth": 4
 }
